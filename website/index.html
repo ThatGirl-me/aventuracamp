@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<!-- 
+  ⚔️ Welcome, brave adventurer! You've discovered the source code! ⚔️
+  
+  Did you know? This website was crafted by the fire, just like the stories within Aventura.
+  
+  Fun fact: The mascot's favorite snack is pixel cookies 🍪
+  
+  Easter egg #1: Try typing "adventure" in the console!
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aventura - AI-powered interactive fiction and creative writing application">
+  <link rel="icon" type="image/png" href="images/logo.png"><!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"><!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet">
+  <title>Aventura - AI-Powered Interactive Fiction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-display text-text-cream bg-background-dark min-h-screen">
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden aurora-sky">
+    <div id="header-include"></div>
+
+    <!-- 🎮 Easter Egg Console Commands 🎮 -->
+    <script>
+      // Easter egg #1: Type "adventure" in console
+      window.adventure = function() {
+        console.log("%c🗡️ A wild adventure appears! 🗡️", "color: #112b4a; font-size: 20px; font-weight: bold;");
+        console.log("%cYou stand at a crossroads. The path ahead is shrouded in mystery...", "color: #a0b4d2; font-style: italic;");
+        console.log("%c\nWhat will you do?", "color: #e6f0ff;");
+        console.log("%c1. Download Aventura", "color: #112b4a;");
+        console.log("%c2. Explore the features", "color: #112b4a;");
+        console.log("%c3. Read the ancient scrolls (docs)", "color: #112b4a;");
+        console.log("%c\nTry typing: mascot(), story(), or secret()", "color: #a0b4d2; font-size: 10px;");
+      };
+      
+      // Easter egg #2: Meet the mascot
+      window.mascot = function() {
+        console.log("%c   /\\_/\\  ", "color: #112b4a; font-size: 16px;");
+        console.log("%c  ( o.o ) ", "color: #112b4a; font-size: 16px;");
+        console.log("%c   > ^ <  ", "color: #112b4a; font-size: 16px;");
+        console.log("%c\n*The Aventura mascot waves at you*", "color: #a0b4d2; font-style: italic;");
+        console.log("%c'Psst... I heard there's a secret() function around here...'", "color: #e6f0ff;");
+      };
+      
+      // Easter egg #3: Generate a story prompt
+      window.story = function() {
+        const prompts = [
+          "A wizard discovers their spellbook is actually a cookbook...",
+          "The last dragon on Earth runs a coffee shop in Seattle...",
+          "You wake up with the ability to hear what cats are thinking...",
+          "A time traveler gets stuck in a time loop at a medieval tavern...",
+          "The moon is actually a giant spaceship, and it just turned on its engines..."
+        ];
+        const prompt = prompts[Math.floor(Math.random() * prompts.length)];
+        console.log("%c✨ Story Prompt Generated! ✨", "color: #112b4a; font-size: 18px; font-weight: bold;");
+        console.log("%c" + prompt, "color: #e6f0ff; font-size: 14px; font-style: italic;");
+        console.log("%c\nNow go write it in Aventura! 📝", "color: #a0b4d2;");
+      };
+      
+      // Easter egg #4: The secret
+      window.secret = function() {
+        console.log("%c🔮 You've discovered the secret! 🔮", "color: #112b4a; font-size: 20px; font-weight: bold;");
+        console.log("%c\nThe real treasure was the stories we wrote along the way.", "color: #e6f0ff; font-style: italic;");
+        console.log("%c\n- The Aventura Dev Team 💙", "color: #a0b4d2;");
+        console.log("%c\nP.S. We're always looking for contributors! Check out our GitHub 🚀", "color: #112b4a; font-size: 12px;");
+      };
+      
+      // Welcome message
+      console.log("%c🏰 Welcome to Aventura! 🏰", "color: #112b4a; font-size: 24px; font-weight: bold;");
+      console.log("%cLooks like you're curious about the code! Try typing adventure() to begin your quest.", "color: #a0b4d2;");
+    </script>
+
+    <main class="flex-1 flex flex-col items-center w-full"> <!-- Hero Section -->
+      <section class="w-full max-w-7xl px-5 sm:px-10 py-12 md:py-20 hero-shell mt-12 md:mt-16 mb-12 md:mb-16">
+        <div class="hero-sparks" aria-hidden="true">
+          <span class="spark-1"></span>
+          <span class="spark-2"></span>
+          <span class="spark-3"></span>
+          <span class="spark-4"></span>
+          <span class="spark-5"></span>
+        </div>
+        <div class="flex flex-col-reverse gap-10 lg:flex-row lg:items-center lg:gap-16"> <!-- Hero Content -->
+          <div class="flex flex-col items-start gap-6 lg:w-1/2"> <!-- Version Badge -->
+            <div
+              class="inline-flex items-center gap-2 rounded-full bg-border-brown/50 border border-border-brown pl-3 pr-4 py-1.5">
+              <span class="flex h-2 w-2 rounded-full animate-pulse" style="background-color:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,0.18);"></span>
+              <p class="text-text-muted text-xs font-bold uppercase tracking-wider font-body" data-release-version data-release-prefix="Latest Version">Latest Version - checking latest...</p>
+            </div>
+            <div class="flex flex-col gap-4">
+              <h1 class="text-text-cream text-5xl sm:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tight">
+                Stories written together, <span class="text-primary italic">by the fire.</span>
+              </h1>
+              <h2 class="text-text-muted text-lg sm:text-xl font-normal leading-relaxed font-body max-w-xl">
+                Aventura is an open-source creative writing lodge with intelligent AI assistance, cinematic atmosphere,
+                and zero-compromise privacy.
+              </h2>
+            </div> <!-- Download Buttons -->
+          <div class="flex flex-wrap gap-3"> <a
+              href="https://github.com/unkarelian/Aventura/releases/latest"
+              data-platform="windows"
+              class="flex items-center justify-center gap-2 rounded-lg transition-colors font-bold font-body h-10 px-4 text-sm bg-primary hover:bg-[#0d2139] text-white shadow-lg shadow-primary/20">
+              <span class="material-symbols-outlined text-[18px]">desktop_windows</span> <span>Windows</span> </a><a
+              href="https://github.com/unkarelian/Aventura/releases/latest"
+              data-platform="mac"
+                class="flex items-center justify-center gap-2 rounded-lg transition-colors font-bold font-body h-10 px-4 text-sm bg-surface-dark border border-border-brown hover:border-primary/50 text-text-cream">
+                <span class="material-symbols-outlined text-[18px]">laptop_mac</span> <span>macOS</span> </a><a
+                href="https://github.com/unkarelian/Aventura/releases/latest"
+                data-platform="linux"
+                class="flex items-center justify-center gap-2 rounded-lg transition-colors font-bold font-body h-10 px-4 text-sm bg-surface-dark border border-border-brown hover:border-primary/50 text-text-cream">
+                <span class="material-symbols-outlined text-[18px]">terminal</span> <span>Linux</span> </a><a
+                href="https://github.com/unkarelian/Aventura/releases/latest"
+                data-platform="android"
+                class="flex items-center justify-center gap-2 rounded-lg transition-colors font-bold font-body h-10 px-4 text-sm bg-surface-dark border border-border-brown hover:border-primary/50 text-text-cream">
+                <span class="material-symbols-outlined text-[18px]">android</span> <span>Android</span> </a> </div>
+            <p class="text-text-muted/60 text-xs font-body mt-4">
+              Open Source &bull; Free to use &bull; Local AI Supported
+            </p>
+          </div> <!-- Hero Image -->
+          <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <div class="hero-visual w-full max-w-[600px]">
+              <div
+                class="hero-frame relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-surface-dark border border-border-brown shadow-2xl">
+                <!-- Logo Display -->
+                <div
+                  class="w-full h-full flex items-center justify-center bg-gradient-to-br from-surface-dark via-background-dark to-surface-dark">
+                  <img src="images/aventura_mascot.png" alt="Aventura Mascot"
+                    class="hero-mascot opacity-90"> </div> <!-- Overlay gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent">
+                </div> <!-- Floating UI Element -->
+                <div
+                  class="absolute bottom-6 left-6 right-6 bg-surface-dark/95 backdrop-blur-md p-4 rounded-xl border border-border-brown shadow-xl">
+                  <div class="flex gap-3">
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                      <span class="material-symbols-outlined">auto_awesome</span> </div>
+                    <div class="flex flex-col gap-1">
+                      <p class="text-text-cream text-sm font-display italic">"The fire crackled, casting long shadows
+                        against the ancient stone walls. What happened next?"</p>
+                      <p class="text-primary text-xs font-bold uppercase tracking-wider mt-1">AI Suggestion</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> <!-- Hero Section -->
+      <section class="w-full bg-surface-dark/30 border-y border-border-brown/50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-10 py-20">
+          <div class="flex flex-col items-center text-center gap-4 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-text-cream">Crafted for Storytellers</h2>
+            <p class="text-text-muted max-w-2xl text-lg font-body">Everything you need to weave complex narratives
+              without getting lost in the details.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="group feature-card">
+              <div class="feature-icon group-hover:bg-primary group-hover:text-background-dark"> <span
+                  class="material-symbols-outlined text-3xl">edit_note</span> </div>
+              <h3 class="text-xl font-bold text-text-cream mb-3">AI Storytelling</h3>
+              <p class="text-text-muted font-body leading-relaxed">Break writer&#39;s block instantly. Let the AI
+                suggest the next sentence, paragraph, or plot twist based on your unique style.</p>
+            </div>
+            <div class="group feature-card">
+              <div class="feature-icon group-hover:bg-primary group-hover:text-background-dark"> <span
+                  class="material-symbols-outlined text-3xl">menu_book</span> </div>
+              <h3 class="text-xl font-bold text-text-cream mb-3">Unified Lorebook</h3>
+              <p class="text-text-muted font-body leading-relaxed">Keep your characters, locations, and world details
+                organized. The AI references your lorebook to ensure consistency.</p>
+            </div>
+            <div class="group feature-card">
+              <div class="feature-icon group-hover:bg-primary group-hover:text-background-dark"> <span
+                  class="material-symbols-outlined text-3xl">psychology</span> </div>
+              <h3 class="text-xl font-bold text-text-cream mb-3">Intelligent Memory</h3>
+              <p class="text-text-muted font-body leading-relaxed">The AI remembers your plot twists so you don&#39;t
+                have to. It tracks context intelligently over long narrative arcs.</p>
+            </div>
+            <div class="group feature-card">
+              <div class="feature-icon group-hover:bg-primary group-hover:text-background-dark"> <span
+                  class="material-symbols-outlined text-3xl">account_tree</span> </div>
+              <h3 class="text-xl font-bold text-text-cream mb-3">Story Branching</h3>
+              <p class="text-text-muted font-body leading-relaxed">Explore alternate timelines and &quot;what-if&quot;
+                scenarios effortlessly. Never lose a good idea or narrative path again.</p>
+            </div>
+          </div>
+          <div class="text-center mt-12"> <a href="pages/features.html"
+              class="inline-flex items-center gap-2 text-primary hover:text-[#15355a] font-bold transition-colors">
+              Explore all features
+              <span class="material-symbols-outlined">arrow_forward</span> </a> </div>
+        </div>
+      </section> <!-- Target Audience Section -->
+      <section class="w-full max-w-7xl px-5 sm:px-10 py-20">
+        <div class="flex flex-col items-center text-center gap-4 mb-16"> <span
+            class="text-primary text-sm font-bold tracking-widest uppercase">Who It's For</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-text-cream">Built for Every Storyteller</h2>
+          <p class="text-text-muted max-w-2xl text-lg font-body">Whether you're crafting novels, running tabletop
+            campaigns, or experimenting with AI, Aventura adapts to your creative needs.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl bg-surface-dark/50 border border-border-brown/50 hover:border-primary/30 transition-colors">
+            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4"> <span
+                class="material-symbols-outlined text-3xl">history_edu</span> </div>
+            <h3 class="text-lg font-bold text-text-cream mb-2">Creative Writers</h3>
+            <p class="text-text-muted text-sm font-body">Novelists, worldbuilders, and experimental fiction creators
+              seeking AI collaboration.</p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl bg-surface-dark/50 border border-border-brown/50 hover:border-primary/30 transition-colors">
+            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4"> <span
+                class="material-symbols-outlined text-3xl">casino</span> </div>
+            <h3 class="text-lg font-bold text-text-cream mb-2">Tabletop RPG Fans</h3>
+            <p class="text-text-muted text-sm font-body">Interactive fiction players, Game Masters, and character
+              backstory creators.</p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl bg-surface-dark/50 border border-border-brown/50 hover:border-primary/30 transition-colors">
+            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4"> <span
+                class="material-symbols-outlined text-3xl">smart_toy</span> </div>
+            <h3 class="text-lg font-bold text-text-cream mb-2">AI Enthusiasts</h3>
+            <p class="text-text-muted text-sm font-body">Prompt engineers, LLM experimenters, and custom API users.</p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl bg-surface-dark/50 border border-border-brown/50 hover:border-primary/30 transition-colors">
+            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4"> <span
+                class="material-symbols-outlined text-3xl">sports_esports</span> </div>
+            <h3 class="text-lg font-bold text-text-cream mb-2">Game Developers</h3>
+            <p class="text-text-muted text-sm font-body">Interactive narrative designers and branching story creators.
+            </p>
+          </div>
+        </div>
+      </section> <!-- Privacy / Open Source Section -->
+      <section class="w-full bg-surface-dark/30 border-y border-border-brown/50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-10 py-20">
+          <div class="flex flex-col gap-8 md:flex-row items-start md:items-center justify-between">
+            <div class="flex flex-col gap-4 max-w-[600px]">
+              <h2 class="text-3xl md:text-4xl font-bold text-text-cream">
+                Built for Privacy,<br>Owned by the Community
+              </h2>
+              <p class="text-text-muted text-lg font-body leading-relaxed">
+                Your words are yours alone. Aventura is Open Source under the AGPL-3.0 license. No tracking, no data
+                mining, just pure writing freedom.
+              </p>
+              <div class="flex flex-wrap gap-4 pt-2"> <a href="https://github.com/unkarelian/Aventura" target="_blank"
+                  rel="noopener noreferrer" class="btn-secondary h-12 px-6 text-base"> <span
+                    class="material-symbols-outlined text-xl">code</span>
+                  View Source
+                </a> <a href="https://github.com/unkarelian/Aventura/blob/main/LICENSE.md" target="_blank"
+                  rel="noopener noreferrer" class="btn-secondary h-12 px-6 text-base"> <span
+                    class="material-symbols-outlined text-xl">gavel</span>
+                  License
+                </a> </div>
+            </div> <!-- License Badge -->
+            <div class="w-full md:w-auto">
+              <div
+                class="bg-surface-dark p-6 rounded-xl border-2 border-primary/30 flex flex-col items-center text-center gap-3 shadow-lg max-w-[280px] mx-auto rotate-1 hover:rotate-0 transition-transform duration-300">
+                <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-1">
+                  <span class="material-symbols-outlined text-[32px]">verified_user</span> </div>
+                <div>
+                  <h3 class="text-text-cream font-bold text-lg">AGPL-3.0</h3>
+                  <p class="text-text-muted text-sm">Open Source License</p>
+                </div>
+                <div class="w-full h-px bg-border-brown my-1"></div>
+                <p class="text-xs text-text-muted/70">Free as in freedom. Modify, share, and distribute.</p>
+              </div>
+            </div>
+          </div> <!-- Privacy Features -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
+            <div
+              class="flex gap-4 p-4 rounded-lg bg-surface-dark border border-border-brown/50 hover:border-border-brown transition-colors">
+              <div class="text-primary pt-1"> <span class="material-symbols-outlined">lock</span> </div>
+              <div>
+                <p class="text-text-cream text-base font-bold">Local-First Architecture</p>
+                <p class="text-text-muted text-sm font-body mt-1">Your data stays on your machine unless you explicitly
+                  choose to sync.</p>
+              </div>
+            </div>
+            <div
+              class="flex gap-4 p-4 rounded-lg bg-surface-dark border border-border-brown/50 hover:border-border-brown transition-colors">
+              <div class="text-primary pt-1"> <span class="material-symbols-outlined">visibility_off</span> </div>
+              <div>
+                <p class="text-text-cream text-base font-bold">Zero Telemetry</p>
+                <p class="text-text-muted text-sm font-body mt-1">We don't know who you are or what you write. We prefer
+                  it that way.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> <!-- Final CTA Section -->
+      <section class="w-full max-w-7xl px-5 sm:px-10 py-20">
+        <div class="flex flex-col items-center text-center gap-8">
+          <div class="flex flex-col gap-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-text-cream">Ready to Start Your Adventure?</h2>
+            <p class="text-text-muted text-lg font-body max-w-xl">Download Aventura for free and begin crafting your
+              stories with AI assistance today.</p>
+          </div>
+          <div class="flex flex-wrap gap-4 justify-center"> <a
+              href="https://github.com/unkarelian/Aventura/releases/latest"
+              data-platform="windows"
+              class="flex items-center justify-center gap-2 rounded-lg transition-colors font-bold font-body flex-1 sm:flex-none min-w-[140px] h-12 px-6 text-base bg-primary hover:bg-[#0d2139] text-background-dark shadow-lg shadow-primary/20">
+              <span class="material-symbols-outlined text-[20px]">desktop_windows</span> <span>Windows</span> </a><a
+              href="https://github.com/unkarelian/Aventura/releases/latest"
+              data-platform="mac"
+              class="flex items-center justify-center gap-2 rounded-lg transition-colors font-bold font-body flex-1 sm:flex-none min-w-[140px] h-12 px-6 text-base bg-surface-dark border border-border-brown hover:border-primary/50 text-text-cream">
+              <span class="material-symbols-outlined text-[20px]">laptop_mac</span> <span>macOS</span> </a><a
+              href="https://github.com/unkarelian/Aventura/releases/latest"
+              data-platform="linux"
+              class="flex items-center justify-center gap-2 rounded-lg transition-colors font-bold font-body flex-1 sm:flex-none min-w-[140px] h-12 px-6 text-base bg-surface-dark border border-border-brown hover:border-primary/50 text-text-cream">
+              <span class="material-symbols-outlined text-[20px]">terminal</span> <span>Linux</span> </a><a
+              href="https://github.com/unkarelian/Aventura/releases/latest"
+              data-platform="android"
+              class="flex items-center justify-center gap-2 rounded-lg transition-colors font-bold font-body flex-1 sm:flex-none min-w-[140px] h-12 px-6 text-base bg-surface-dark border border-border-brown hover:border-primary/50 text-text-cream">
+              <span class="material-symbols-outlined text-[20px]">android</span> <span>Android</span> </a> </div>
+          <p class="text-text-muted/60 text-xs font-body mt-4">
+            Open Source &bull; Free to use &bull; Local AI Supported
+          </p>
+        </div>
+      </section>
+    </main>
+    <div id="footer-include"></div>
+  </div>
+
+  <!-- 
+    🎭 You made it to the end! 🎭
+    
+    "Every great story has an ending, but in Aventura, 
+     every ending is just a new beginning."
+    
+    Thanks for exploring our code! 
+    May your stories be epic and your bugs be few. 🐛✨
+    
+    - Crafted with 💙 by the Aventura team
+  -->
+
+  <script src="includes.js"></script>
+  <script type="module" src="release-dynamic.js"></script>
+</body>
+
+</html>
